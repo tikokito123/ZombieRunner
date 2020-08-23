@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityStandardAssets.ImageEffects;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class EnemyAI : MonoBehaviour
     NavMeshAgent navMeshAgent;
     [SerializeField] float chaseRange = 5f;
     float distanceToTarget = Mathf.Infinity;
+    bool isProvoked = false;
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -16,15 +19,41 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
-        ChaseAfterTarget();
+        distanceToTarget = Vector3.Distance(target.position, transform.position);
+        if (isProvoked)
+        {
+            EngageTarget();
+        }
+        else if (distanceToTarget <= chaseRange)
+        {
+            isProvoked = true;
+        }
+
     }
 
+    private void EngageTarget()
+    {
+        if (distanceToTarget > navMeshAgent.stoppingDistance)
+        {
+            ChaseAfterTarget();
+        }
+        else if (distanceToTarget <= navMeshAgent.stoppingDistance)
+        {
+            AttackTarget(); 
+        }
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, chaseRange);
+    }
     private void ChaseAfterTarget()
     {
-        distanceToTarget = Vector3.Distance(target.position, transform.position);
-        if (distanceToTarget < chaseRange)
-        {
-            navMeshAgent.SetDestination(target.position);
-        }
+        navMeshAgent.SetDestination(target.position);
+    }
+
+    private void AttackTarget()
+    {
+        print("Attack! ");
     }
 }
