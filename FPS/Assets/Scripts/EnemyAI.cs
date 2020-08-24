@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityStandardAssets.ImageEffects;
@@ -12,11 +13,12 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] float chaseRange = 5f;
     float distanceToTarget = Mathf.Infinity;
     bool isProvoked = false;
+    Animator enemyAnimator;
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        enemyAnimator = GetComponent<Animator>();
     }
-
     void Update()
     {
         distanceToTarget = Vector3.Distance(target.position, transform.position);
@@ -49,11 +51,13 @@ public class EnemyAI : MonoBehaviour
     }
     private void ChaseAfterTarget()
     {
+        enemyAnimator.SetBool("Attack", false);
+        enemyAnimator.SetTrigger("Move");
         navMeshAgent.SetDestination(target.position);
     }
 
     private void AttackTarget()
     {
-        print("Attack! ");
+        enemyAnimator.SetBool("Attack", true);
     }
 }
