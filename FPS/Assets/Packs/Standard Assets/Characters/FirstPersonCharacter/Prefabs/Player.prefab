@@ -342,7 +342,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92a4afd210bd803498ba69509e66d24d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoAmount: 30
+  ammoSlots:
+  - ammoType: 0
+    ammoAmount: 90
+  - ammoType: 2
+    ammoAmount: 60
+  - ammoType: 3
+    ammoAmount: 6
+  - ammoType: 1
+    ammoAmount: 19
 --- !u!114 &822730497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,6 +369,7 @@ MonoBehaviour:
   muzzleFlash: {fileID: 3614249444469992763}
   explosion: {fileID: 3871220909248061186, guid: 2ec161e5249ee6e4f9e6d61f659b3abd, type: 3}
   ammoSlot: {fileID: 7748193362011803667}
+  ammoType: 1
   timeBetweenShots: 1.1
 --- !u!114 &2546712295376015196
 MonoBehaviour:
@@ -427,7 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 800f9d8c3aacc1c40bc0b02c0a5e14a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentweapon: 0
+  currentWeapon: 0
 --- !u!114 &948308034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,6 +455,7 @@ MonoBehaviour:
   muzzleFlash: {fileID: 3614249444100295410}
   explosion: {fileID: 3871220909248061186, guid: 2ec161e5249ee6e4f9e6d61f659b3abd, type: 3}
   ammoSlot: {fileID: 7748193362011803667}
+  ammoType: 3
   timeBetweenShots: 3
 --- !u!114 &957714798874779094
 MonoBehaviour:
@@ -499,6 +509,7 @@ MonoBehaviour:
   muzzleFlash: {fileID: 3614249444075334682}
   explosion: {fileID: 3871220909248061186, guid: 2ec161e5249ee6e4f9e6d61f659b3abd, type: 3}
   ammoSlot: {fileID: 7748193362011803667}
+  ammoType: 0
   timeBetweenShots: 1
 --- !u!114 &1414228930161621901
 MonoBehaviour:
@@ -535,6 +546,7 @@ MonoBehaviour:
   muzzleFlash: {fileID: 3614249442409990077}
   explosion: {fileID: 3871220909248061186, guid: 2ec161e5249ee6e4f9e6d61f659b3abd, type: 3}
   ammoSlot: {fileID: 7748193362011803667}
+  ammoType: 2
   timeBetweenShots: 0.1
 --- !u!114 &2425460169184513434
 MonoBehaviour:
@@ -1141,6 +1153,10 @@ PrefabInstance:
     - target: {fileID: 1093586402, guid: a8c8219ec65dbf143aa4e1274a6ed04a, type: 3}
       propertyPath: timeBetweenShots
       value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1093586402, guid: a8c8219ec65dbf143aa4e1274a6ed04a, type: 3}
+      propertyPath: ammoType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6052961232789598097, guid: a8c8219ec65dbf143aa4e1274a6ed04a, type: 3}
       propertyPath: m_LocalPosition.x
