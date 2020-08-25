@@ -388,6 +388,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 726274749}
+  - component: {fileID: 8739535185427820597}
   m_Layer: 0
   m_Name: Weapons
   m_TagString: Untagged
@@ -414,6 +415,19 @@ Transform:
   m_Father: {fileID: 400000}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8739535185427820597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726274748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 800f9d8c3aacc1c40bc0b02c0a5e14a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentweapon: 0
 --- !u!114 &948308034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -789,6 +803,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AWP Sniper
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d78fce1f586605a47ab057832f697a8d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d78fce1f586605a47ab057832f697a8d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.249
@@ -847,14 +865,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d78fce1f586605a47ab057832f697a8d, type: 3}
---- !u!1 &738977673 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: d78fce1f586605a47ab057832f697a8d, type: 3}
-  m_PrefabInstance: {fileID: 738877737}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &739015593 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: d78fce1f586605a47ab057832f697a8d, type: 3}
+  m_PrefabInstance: {fileID: 738877737}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &738977673 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: d78fce1f586605a47ab057832f697a8d, type: 3}
   m_PrefabInstance: {fileID: 738877737}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &846894150
@@ -870,7 +888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1669814075106190, guid: ea530e89dc913d14480baec0a57c7801, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4389320645946552, guid: ea530e89dc913d14480baec0a57c7801, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1178,6 +1196,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8c8219ec65dbf143aa4e1274a6ed04a, type: 3}
+--- !u!1 &1436722423 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6052961232789828529, guid: a8c8219ec65dbf143aa4e1274a6ed04a, type: 3}
+  m_PrefabInstance: {fileID: 6052961231353370438}
+  m_PrefabAsset: {fileID: 0}
 --- !u!198 &3614249444469992763 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 7361156216712477309, guid: a8c8219ec65dbf143aa4e1274a6ed04a, type: 3}
@@ -1186,10 +1209,5 @@ ParticleSystem:
 --- !u!4 &1436891351 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6052961232789598097, guid: a8c8219ec65dbf143aa4e1274a6ed04a, type: 3}
-  m_PrefabInstance: {fileID: 6052961231353370438}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1436722423 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6052961232789828529, guid: a8c8219ec65dbf143aa4e1274a6ed04a, type: 3}
   m_PrefabInstance: {fileID: 6052961231353370438}
   m_PrefabAsset: {fileID: 0}
