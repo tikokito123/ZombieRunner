@@ -35,6 +35,7 @@ public class EnemyAI : MonoBehaviour
 
     private void EngageTarget()
     {
+        FaceTarget();
         if (distanceToTarget > navMeshAgent.stoppingDistance)
         {
             ChaseAfterTarget();
@@ -59,5 +60,11 @@ public class EnemyAI : MonoBehaviour
     private void AttackTarget()
     {
         enemyAnimator.SetBool("Attack", true);
+    }
+    private void FaceTarget()
+    {
+        Vector3 direction = (target.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10);
     }
 }
