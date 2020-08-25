@@ -11,15 +11,13 @@ public class Weapons : MonoBehaviour
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] GameObject explosion;
     [SerializeField] Ammo ammoSlot;
+    [SerializeField] float timeBetweenShots = 1f; 
+    bool canShoot = true;
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1") && canShoot)
         {
-            if (ammoSlot.GetAmmo() > 0)
-            {
-                shoot();
-            }
-            else return;
+               StartCoroutine(shoot());
         }     
     }
     private void Start()
@@ -27,11 +25,17 @@ public class Weapons : MonoBehaviour
         ammoSlot = FindObjectOfType<Ammo>();
     }
 
-    private void shoot()
+    IEnumerator shoot()
     {
-        PlayMuzzleFlash();
-        ProcessRaycast();
-        ammoSlot.ReduceAmmo();
+        canShoot = false;
+        if (ammoSlot.GetAmmo() > 0)
+        {
+            PlayMuzzleFlash();
+            ProcessRaycast();
+            ammoSlot.ReduceAmmo();
+        }
+        yield return new WaitForSeconds(timeBetweenShots);
+        canShoot = true;
     }
     private void PlayMuzzleFlash()
     {

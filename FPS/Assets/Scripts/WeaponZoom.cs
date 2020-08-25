@@ -17,7 +17,7 @@ public class WeaponZoom : MonoBehaviour
     }
     private void Start()
     {
-        mouseSen = GetComponent<RigidbodyFirstPersonController>();
+        mouseSen = GetComponentInParent<RigidbodyFirstPersonController>();
     }
     void Aim()
     {
