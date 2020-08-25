@@ -9,21 +9,30 @@ public class Weapons : MonoBehaviour
     [SerializeField] float range = 100f;
     [SerializeField] float damage = 10f;
     [SerializeField] ParticleSystem muzzleFlash;
-    [SerializeField] GameObject explosion; 
+    [SerializeField] GameObject explosion;
+    [SerializeField] Ammo ammoSlot;
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            shoot();
+            if (ammoSlot.GetAmmo() > 0)
+            {
+                shoot();
+            }
+            else return;
         }     
+    }
+    private void Start()
+    {
+        ammoSlot = FindObjectOfType<Ammo>();
     }
 
     private void shoot()
     {
         PlayMuzzleFlash();
         ProcessRaycast();
+        ammoSlot.ReduceAmmo();
     }
-
     private void PlayMuzzleFlash()
     {
         muzzleFlash.Play();

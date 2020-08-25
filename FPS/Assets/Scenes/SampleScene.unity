@@ -3344,6 +3344,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 451222, guid: 4e2dd32c733005a44b50004d673dc653, type: 3}
   m_PrefabInstance: {fileID: 206560027}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &213128666 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7748193362011803667, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+  m_PrefabInstance: {fileID: 344746262}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92a4afd210bd803498ba69509e66d24d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &213856422
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6193,10 +6204,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1093586402, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: ammo
+      value: 
+      objectReference: {fileID: 213128666}
+    - target: {fileID: 1093586402, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: ammoSlot
+      value: 
+      objectReference: {fileID: 213128666}
     - target: {fileID: 5266387278715638468, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
       propertyPath: gameOverCanvas
       value: 
       objectReference: {fileID: 1745771262}
+    - target: {fileID: 6052961232446134948, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
+      propertyPath: ammoSlot
+      value: 
+      objectReference: {fileID: 213128666}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6453f8e1f814744d8b94e5a6d1f9942, type: 3}
 --- !u!4 &345447263 stripped
