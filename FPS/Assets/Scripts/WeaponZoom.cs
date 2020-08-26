@@ -19,19 +19,33 @@ public class WeaponZoom : MonoBehaviour
     {
         mouseSen = GetComponentInParent<RigidbodyFirstPersonController>();
     }
+    private void OnDisable()
+    {
+        ZoomOut();
+    }
     void Aim()
     {
         if (Input.GetMouseButton(1))
         {
-            FOV.fieldOfView = zoomInFOV;
-            mouseSen.mouseLook.XSensitivity = zoomInSen;
-            mouseSen.mouseLook.YSensitivity = zoomInSen;
+            ZoomIn();
         }
         else
         {
-            FOV.fieldOfView = zoomOutFOV;
-            mouseSen.mouseLook.XSensitivity = zoomOutSen;
-            mouseSen.mouseLook.YSensitivity = zoomOutSen;
+            ZoomOut();
         }
+    }
+
+    private void ZoomOut()
+    {
+        FOV.fieldOfView = zoomOutFOV;
+        mouseSen.mouseLook.XSensitivity = zoomOutSen;
+        mouseSen.mouseLook.YSensitivity = zoomOutSen;
+    }
+
+    private void ZoomIn()
+    {
+        FOV.fieldOfView = zoomInFOV;
+        mouseSen.mouseLook.XSensitivity = zoomInSen;
+        mouseSen.mouseLook.YSensitivity = zoomInSen;
     }
 }
