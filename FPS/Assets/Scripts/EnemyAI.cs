@@ -21,6 +21,10 @@ public class EnemyAI : MonoBehaviour
     }
     void Update()
     {
+        if (GetComponent<EnemyHealth>().IsDead())
+        {
+            enabled = false;
+        }
         distanceToTarget = Vector3.Distance(target.position, transform.position);
         if (isProvoked)
         {

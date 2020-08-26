@@ -437,4 +437,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amountOfAmmo: 15
-  ammoType: 0
+  ammoType: 2
