@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Weapons : MonoBehaviour
 {
@@ -12,15 +13,23 @@ public class Weapons : MonoBehaviour
     [SerializeField] GameObject explosion;
     [SerializeField] Ammo ammoSlot;
     [SerializeField] AmmoType ammoType;
-    [SerializeField] float timeBetweenShots = 1f; 
+    [SerializeField] float timeBetweenShots = 1f;
+    [SerializeField] Text ammoText;
     bool canShoot = true;
     void Update()
     {
+        DisplayAmmo();
         if (Input.GetButton("Fire1") && canShoot)
         {
             StartCoroutine(shoot());
         }
     }
+
+    private void DisplayAmmo()
+    {
+        ammoText.text = ammoSlot.GetAmmo(ammoType).ToString();
+    }
+
     private void Start()
     {
         ammoSlot = FindObjectOfType<Ammo>();
