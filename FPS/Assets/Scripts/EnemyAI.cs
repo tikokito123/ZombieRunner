@@ -5,7 +5,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityStandardAssets.ImageEffects;
-
 public class EnemyAI : MonoBehaviour
 {
     [SerializeField] Transform target;
@@ -25,6 +24,7 @@ public class EnemyAI : MonoBehaviour
         {
             enabled = false;
             navMeshAgent.enabled = false;
+            Destroy(gameObject, 10f);
         }
         distanceToTarget = Vector3.Distance(target.position, transform.position);
         if (isProvoked)
