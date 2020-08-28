@@ -24,6 +24,7 @@ public class EnemyAI : MonoBehaviour
         if (GetComponent<EnemyHealth>().IsDead())
         {
             enabled = false;
+            navMeshAgent.enabled = false;
         }
         distanceToTarget = Vector3.Distance(target.position, transform.position);
         if (isProvoked)
@@ -58,7 +59,10 @@ public class EnemyAI : MonoBehaviour
     {
         enemyAnimator.SetBool("Attack", false);
         enemyAnimator.SetTrigger("Move");
-        navMeshAgent.SetDestination(target.position);
+        if (navMeshAgent.enabled)
+        {
+            navMeshAgent.SetDestination(target.position);
+        }
     }
 
     private void AttackTarget()
