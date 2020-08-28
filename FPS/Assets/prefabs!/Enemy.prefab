@@ -127,8 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c636b1b133eb84f40a38de7f9c6b525b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  chaseRange: 20
+  chaseRange: 10
 --- !u!95 &1957887749
 Animator:
   serializedVersion: 3

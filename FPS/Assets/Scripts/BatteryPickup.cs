@@ -18,6 +18,7 @@ public class BatteryPickup : MonoBehaviour
         if (other.gameObject.name == "Player")
         {
             Restore();
+            Destroy(gameObject);
         }
         else
         {

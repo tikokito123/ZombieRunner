@@ -4,19 +4,21 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityStandardAssets.Characters.FirstPerson;
 using UnityStandardAssets.ImageEffects;
 public class EnemyAI : MonoBehaviour
 {
-    [SerializeField] Transform target;
-    NavMeshAgent navMeshAgent;
     [SerializeField] float chaseRange = 5f;
     float distanceToTarget = Mathf.Infinity;
     bool isProvoked = false;
     Animator enemyAnimator;
+    NavMeshAgent navMeshAgent;
+    Transform target;
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         enemyAnimator = GetComponent<Animator>();
+        target = FindObjectOfType<RigidbodyFirstPersonController>().transform;
     }
     void Update()
     {
